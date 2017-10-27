@@ -1,16 +1,11 @@
-// * {
-//     outline: 1px solid red;
-// }
-
-.kegs {
-    width: 100%;
-    .individual-keg {
-        margin-bottom: 20px;
-        border: 2px solid gray;
+.card-image {
+    height: 300px;
+    h5 {
+        padding-left: 25px;
     }
-    
 }
 
-span {
-    margin: 10px 50px 30px 2px;
+.card-content {
+    margin-top: 20px;
 }
+
