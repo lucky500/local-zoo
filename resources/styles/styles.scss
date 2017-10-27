@@ -1,11 +1,23 @@
-.card-image {
-    height: 300px;
-    h5 {
-        padding-left: 25px;
+.card {
+    .card-image {
+        h5 {
+            padding-left: 25px;
+        }
+        .card-title {
+            position: relative;
+            left: -10px;
+            top:  -89px;
+        }
+    }
+    .card-content {
+        height: 140px;
     }
 }
 
-.card-content {
-    margin-top: 20px;
+.edit-form {
+    .card {
+        height: 45%;
+    }
 }
+
 
