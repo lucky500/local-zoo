@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
             <div *ngFor="let currentAnimal of animals" 
               class="card animal">
                 <div class="card-image">
-                  <img src="#" />
+                  <img src={{currentAnimal.img}} >
                   <h5>Name: {{currentAnimal.name}}</h5>
                   <span class="card-title">Species: {{currentAnimal.species}}</span>
                 </div>
@@ -39,10 +39,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   animals: Animal[] = [
-    new Animal("Artic Fox", "Moon", 2, "Carnivore", "Northern Trail", 5, "Female", "Cool shade", "Loud noises")
+    new Animal("Artic Fox", "Moon", 2, "Carnivore", "Northern Trail", 5, "Female", "Cool shade", "Loud noises", "../resources/images/arctic_fox.jpg")
   ]
 }
 
 export class Animal{ 
-  constructor(public species: string, public name: string, public age: number, public diet: string, public location: string, public caretakers: number, public gender: string, public likes: string, public dislikes: string){}
+  constructor(public species: string, public name: string, public age: number, public diet: string, public location: string, public caretakers: number, public gender: string, public likes: string, public dislikes: string, public img: string){}
 }
