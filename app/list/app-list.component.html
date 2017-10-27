@@ -1,4 +1,4 @@
-<div *ngFor="let currentAnimal of animals" class="col s12 m4">
+<div *ngFor="let currentAnimal of childAnimalList" class="col s12 m4">
     <div class="card animal">
         <div class="card-image">
         <img src={{currentAnimal.img}} >
@@ -21,7 +21,7 @@
         </div>
         <div class="card-action">
         <a class="waves-effect waves-light btn"
-            (click)="editAnimal(currentAnimal)">
+            (click)="editButtonHasBeenClicked(currentAnimal)">
             Edit
         </a>
         </div>

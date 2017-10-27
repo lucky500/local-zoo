@@ -5,7 +5,7 @@
         </a>
         <div class="col s12">
             <div class="row">
-                <app-list></app-list>
+                <app-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></app-list>
             </div>
         </div>
     </div>

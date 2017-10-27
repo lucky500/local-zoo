@@ -5,19 +5,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var animal_model_1 = require("../animal.model");
 var AppListComponent = (function () {
     function AppListComponent() {
-        this.animals = [
-            new animal_model_1.Animal("Artic Fox", "Moon", 2, "Carnivore", "Northern Trail", 5, "Female", "Cool shade", "Loud noises", "../resources/images/arctic_fox.jpg"),
-            new animal_model_1.Animal("Ocelot", "Prince", 4, "Carnivore", "Tropical Rain Forest Building", 6, "Male", "Laying in the sunshine", "Toys that are not rope-based", "../resources/images/ocelot.jpg"),
-            new animal_model_1.Animal("Northwest Black Tailed Deer", "Tinkerbell", 8, "Herbivore", "Northern Trail", 2, "Female", "Delicate roots and leaves", "Loud Noises", "../resources/images/deer.jpg")
-        ];
+        this.clickSender = new core_1.EventEmitter();
     }
+    AppListComponent.prototype.editButtonHasBeenClicked = function (animalToEdit) {
+        this.clickSender.emit(animalToEdit);
+    };
     return AppListComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], AppListComponent.prototype, "childAnimalList", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], AppListComponent.prototype, "clickSender", void 0);
 AppListComponent = __decorate([
     core_1.Component({
         selector: 'app-list',
