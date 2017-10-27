@@ -5,12 +5,12 @@
         </a>
         <div class="col s12">
             <div class="row">
-            <div *ngFor="let currentAnimal of animals" class="col s12 m2 l6">
+            <div *ngFor="let currentAnimal of animals" class="col s12 m4">
                 <div class="card animal">
                     <div class="card-image">
                     <img src={{currentAnimal.img}} >
                     <h5>Name: {{currentAnimal.name}}</h5>
-                    <span class="card-title">Species: {{currentAnimal.species}}</span>
+                    <span class="card-title">{{currentAnimal.species}}</span>
                     </div>
                     <div class="card-content">
                     <div class="row">
