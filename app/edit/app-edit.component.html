@@ -1,0 +1,20 @@
+<div class="row edit-form" *ngIf="selectedAnimal">
+    <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+            <span class="card-title">{{selectedAnimal.name}}</span>
+            <h5>Edit Animal</h5>
+            <label>Enter Animal new name:</label>
+            <input [(ngModel)]="selectedAnimal.name">
+            <label>Enter Animal new age:</label>
+            <input [(ngModel)]="selectedAnimal.age">
+            <label>Enter Animal new caretakers:</label>
+            <input [(ngModel)]="selectedAnimal.caretakers">
+            <div>
+                <a class="waves-effect waves-light btn"
+                    (click)="finishedEditing()">
+                    Done
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
