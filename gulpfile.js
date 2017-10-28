@@ -6,9 +6,9 @@ var lib = require('bower-files')({
   "overrides":{
     "bootstrap" : {
       "main": [
-        "less/bootstrap.less",
-        "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js"
+        "sass/materialize.scss",
+        "dist/css/materialize.css",
+        "dist/js/materialize.js"
       ]
     }
   }
@@ -21,6 +21,7 @@ var browserSync = require('browser-sync').create();
 var shell = require('gulp-shell');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var rename = require('gulp-rename');
 
 ////////////////////// TYPESCRIPT //////////////////////
 
@@ -32,6 +33,15 @@ gulp.task('tsClean', function(){
 gulp.task('ts', ['tsClean'], shell.task([
   'tsc'
 ]));
+
+////////////////////// JS /////////////////////////
+
+gulp.task('plainJS', function(){
+  return gulp.src('resources/js/*.js')
+    .pipe(uglify())
+    .pipe(rename('scripts.min.js'))
+    .pipe(gulp.dest('./build/js'))
+});
 
 ////////////////////// BOWER //////////////////////
 
@@ -84,7 +94,7 @@ gulp.task('serve', ['build'], function() {
   gulp.watch(['resources/styles/*.css', 'resources/styles/*.scss'], ['cssBuild']);      gulp.watch(['app/*.ts'], ['tsBuild']); // typescript files change, compile then reload.
 });
 
-gulp.task('jsBuild', function(){
+gulp.task('jsBuild', ['plainJS'], function(){
   browserSync.reload();
 });
 
@@ -106,4 +116,5 @@ gulp.task('build', ['ts'], function(){
   // we can use the buildProduction environment variable here later.
   gulp.start('bower');
   gulp.start('sassBuild');
+  gulp.start('plainJS');
 });

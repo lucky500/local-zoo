@@ -1,5 +1,21 @@
+.container {
+    .row {
+        margin-top: 30px;
+    }
+}
+
+label {
+    color: #bdc3c7;
+}
+
 .card {
     .card-image {
+        height: 240px;
+
+        img {
+            height: 170;
+            width: 245;
+        }
         h5 {
             padding-left: 25px;
         }
@@ -17,7 +33,13 @@
 
 .edit-form {
     .card {
-        height: 45%;
+        height: 47%;
+    }
+}
+
+.new-form {
+    .card {
+        height: 580px;
     }
 }
 

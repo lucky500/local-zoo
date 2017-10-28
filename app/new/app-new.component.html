@@ -27,7 +27,7 @@
                     <label>Enter What this Animal Dislikes:</label>
                     <input #newDislikes>    
                 </div>
-                <button class="waves-effect waves-light btn" (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newGender.value,newLikes.value, newDislikes.value, newImg.value)">Add</button>
+                <button class="waves-effect waves-light btn" (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newGender.value,newLikes.value, newDislikes.value, newImg.value); newSpecies.value=''; newName.value=''; newAge.value=''; newDiet.value=''; newLocation.value=''; newCaretakers.value=''; newGender.value=''; newLikes.value=''; newDislikes.value=''; newImg.value='';">Add</button>
             </div>
         </div>
     </div>
