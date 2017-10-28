@@ -1,17 +1,16 @@
-<div class="row edit-form" *ngIf="selectedAnimal">
+<div class="row edit-form" *ngIf="childSelectedAnimal">
     <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-            <span class="card-title">{{selectedAnimal.name}}</span>
+            <span class="card-title">{{childSelectedAnimal.name}}</span>
             <h5>Edit Animal</h5>
             <label>Enter Animal new name:</label>
-            <input [(ngModel)]="selectedAnimal.name">
+            <input [(ngModel)]="childSelectedAnimal.name">
             <label>Enter Animal new age:</label>
-            <input [(ngModel)]="selectedAnimal.age">
+            <input [(ngModel)]="childSelectedAnimal.age">
             <label>Enter Animal new caretakers:</label>
-            <input [(ngModel)]="selectedAnimal.caretakers">
+            <input [(ngModel)]="childSelectedAnimal.caretakers">
             <div>
-                <a class="waves-effect waves-light btn"
-                    (click)="finishedEditing()">
+                <a class="waves-effect waves-light btn" (click)="doneButtonClicked()">
                     Done
                 </a>
             </div>

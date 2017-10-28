@@ -9,5 +9,11 @@ import { Animal } from '../animal.model';
 })
 
 export class AppEditComponent{
+    @Input() childSelectedAnimal: Animal;
+    @Output() doneButtonClickedSender = new EventEmitter();
+
+    doneButtonClicked(){
+        this.doneButtonClickedSender.emit();
+    }
 
 }

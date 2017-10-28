@@ -4,6 +4,8 @@ import { FormsModule }  from '@angular/forms';
 
 import { AppComponent }   from './app.component';
 import { AppListComponent } from './list/app-list.component';
+import { AppEditComponent } from './edit/app-edit.component';
+import { AppNewComponent } from './new/app-new.component';
 
 
 
@@ -14,7 +16,9 @@ import { AppListComponent } from './list/app-list.component';
     ],
   declarations: [ 
     AppComponent,
-    AppListComponent ],
+    AppListComponent,
+    AppEditComponent,
+    AppNewComponent ],
   bootstrap:    [ AppComponent ]
 })
 
