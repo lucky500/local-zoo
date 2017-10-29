@@ -1,29 +1,40 @@
-<div *ngFor="let currentAnimal of childAnimalList" class="col s12 m4">
-    <div class="card animal">
-        <div class="card-image">
-        <img src={{currentAnimal.img}} >
-        <h5>Name: {{currentAnimal.name}}</h5>
-        <span class="card-title">{{currentAnimal.species}}</span>
-        </div>
-        <div class="card-content">
-        <div class="row">
-            <div class="col s12 m6">
-            <p>age: {{currentAnimal.age}}</p>
-            <p>diet: {{currentAnimal.diet}}</p>
-            <p>likes: {{currentAnimal.likes}}</p>
+<div>
+    <select (change)="onChange($event.target.value)">
+        <option value="allAnimals">All Animals</option>
+        <option value="animalsUnderTwo">Animals Under 2 Years old</option>
+        <option value="animalsOverTwo">Animals Over 2 Years old</option>
+    </select>
+    <div *ngFor="let currentAnimal of childAnimalList | ageFilter: filterByAge" class="col s12 m4">
+        <div class="card animal">
+            <div class="card-image">
+            <img src={{currentAnimal.img}} >
+            <h5>Name: {{currentAnimal.name}}</h5>
+            <span class="card-title">{{currentAnimal.species}}</span>
             </div>
-            <div class="col s12 m6">
-            <p>caretaker: {{currentAnimal.caretakers}}</p>
-            <p>gender: {{currentAnimal.gender}}</p>
-            <p>dislikes: {{currentAnimal.dislikes}}</p>
+            <div class="card-content">
+            <div class="row">
+                <div class="col s12 m6">
+                <p>age: {{currentAnimal.age}}</p>
+                <p>diet: {{currentAnimal.diet}}</p>
+                <p>likes: {{currentAnimal.likes}}</p>
+                </div>
+                <div class="col s12 m6">
+                <p>caretaker: {{currentAnimal.caretakers}}</p>
+                <p>gender: {{currentAnimal.gender}}</p>
+                <p>dislikes: {{currentAnimal.dislikes}}</p>
+                </div>
             </div>
-        </div>
-        </div>
-        <div class="card-action">
-        <a class="waves-effect waves-light btn"
-            (click)="editButtonHasBeenClicked(currentAnimal)">
-            Edit
-        </a>
+            </div>
+            <div class="card-action">
+            <a class="waves-effect waves-light btn"
+                (click)="editButtonHasBeenClicked(currentAnimal)">
+                Edit
+            </a>
+            <a class="waves-effect waves-light btn delete-btn"
+                (click)="deleteButtonHasBeenClicked(currentAnimal)">
+                Delete
+            </a>
+            </div>
         </div>
     </div>
 </div>

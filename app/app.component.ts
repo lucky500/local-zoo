@@ -9,7 +9,6 @@ import { Animal } from './animal.model';
 })
 
 export class AppComponent {
-  //selectedAnimal: Animal  = this.animals[0];
   selectedAnimal = null;
 
   masterAnimalList: Animal[] = [
@@ -30,7 +29,8 @@ export class AppComponent {
     this.masterAnimalList.push(newAnimalFromChild);
   }
 
-  youngerThanTwo(listAnimal: Animal){
-
+  deleteAnimal(clickedAnimal){
+    let index = this.masterAnimalList.indexOf(clickedAnimal);
+    this.masterAnimalList.splice(index, 1);
   }
 }

@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }  from '@angular/forms';
+import { AgeFilterPipe } from './agefilter.pipe';
 
 import { AppComponent }   from './app.component';
 import { AppListComponent } from './list/app-list.component';
@@ -18,7 +19,9 @@ import { AppNewComponent } from './new/app-new.component';
     AppComponent,
     AppListComponent,
     AppEditComponent,
-    AppNewComponent ],
+    AppNewComponent,
+    AgeFilterPipe 
+  ],
   bootstrap:    [ AppComponent ]
 })
 

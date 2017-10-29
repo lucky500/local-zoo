@@ -13,9 +13,17 @@ var core_1 = require("@angular/core");
 var AppListComponent = (function () {
     function AppListComponent() {
         this.clickSender = new core_1.EventEmitter();
+        this.deleteSender = new core_1.EventEmitter();
+        this.filterByAge = "allAnimals";
     }
+    AppListComponent.prototype.onChange = function (optionFromMenu) {
+        this.filterByAge = optionFromMenu;
+    };
     AppListComponent.prototype.editButtonHasBeenClicked = function (animalToEdit) {
         this.clickSender.emit(animalToEdit);
+    };
+    AppListComponent.prototype.deleteButtonHasBeenClicked = function (animalToDelete) {
+        this.deleteSender.emit(animalToDelete);
     };
     return AppListComponent;
 }());
@@ -27,6 +35,10 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], AppListComponent.prototype, "clickSender", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], AppListComponent.prototype, "deleteSender", void 0);
 AppListComponent = __decorate([
     core_1.Component({
         selector: 'app-list',
